@@ -36,7 +36,7 @@
 
     NSLog(@"%@ entering background %f seconds after %@", 
           NSStringFromClass([self class]), 
-          [self.appTimer elapsedTime],
+          [self.appTimer getTimerDelta],
           self.appTimer);
 }
 
@@ -51,7 +51,7 @@
 
     NSLog(@"%@ becoming active %f seconds after %@", 
           NSStringFromClass([self class]), 
-          [self.appTimer elapsedTime],
+          [self.appTimer getTimerDelta],
           self.appTimer);
 }
 

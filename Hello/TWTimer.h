@@ -4,7 +4,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic, readonly) NSDate *initialTime;
 
-- (NSTimeInterval)elapsedTime;
+- (NSTimeInterval)getTimerDelta;
 - (id)initWithName:(NSString*)aName;
 - (NSString*)description;
 

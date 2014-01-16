@@ -12,7 +12,8 @@
 - (id)initWithName:(NSString*)aName
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _initialTime = [[NSDate alloc]init];
         _name = aName;
     }
@@ -29,13 +30,14 @@
 - (id)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _initialTime = [[NSDate alloc] init];
     }
     return self;
 }
 
-- (NSTimeInterval)elapsedTime 
+- (NSTimeInterval)getTimerDelta 
 {
     NSDate *now = [[NSDate alloc] init];
     NSTimeInterval elapsedTime = [now timeIntervalSinceDate:self.initialTime];
