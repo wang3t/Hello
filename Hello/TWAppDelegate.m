@@ -4,12 +4,19 @@
 //
 
 #import "TWAppDelegate.h"
+#import "TWTimer.h"
+
+@interface TWAppDelegate()
+@property (strong, nonatomic) TWTimer* appTimer;
+@end
 
 @implementation TWAppDelegate
+@synthesize appTimer = _appTimer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.appTimer = [[TWTimer alloc]initWithName:@"HelloGit"];
     return YES;
 }
 							
