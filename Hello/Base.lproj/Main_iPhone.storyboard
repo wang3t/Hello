@@ -33,7 +33,7 @@
                                     <action selector="sayHello:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iKz-QB-wX1"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globe_l.png" translatesAutoresizingMaskIntoConstraints="NO" id="RkF-m8-WfC">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globe.png" translatesAutoresizingMaskIntoConstraints="NO" id="RkF-m8-WfC">
                                 <rect key="frame" x="5" y="113" width="310" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -59,7 +59,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="globe_l.png" width="1024" height="1024"/>
+        <image name="globe.png" width="1024" height="1024"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
