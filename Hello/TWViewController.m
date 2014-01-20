@@ -18,6 +18,7 @@
 - (IBAction)sayHello:(id)sender
 {
     self.hello.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
+    self.event.text = [NSString stringWithFormat:@"Button at %f sec",[self.appTimer getDeltaTime]];
 }
 
 -(void)tapRecognized:(UIGestureRecognizer*)recognizer
