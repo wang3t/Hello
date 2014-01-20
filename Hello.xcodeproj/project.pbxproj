@@ -24,7 +24,6 @@
 		B53A7A971886E062005EAC49 /* HelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A961886E062005EAC49 /* HelloTests.m */; };
 		B53A7AA41887B293005EAC49 /* TWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7AA31887B293005EAC49 /* TWTimer.m */; };
 		B53A7AA6188D7D68005EAC49 /* globe_l.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA5188D7D68005EAC49 /* globe_l.png */; };
-		B53A7AA8188D7DB6005EAC49 /* globe_h.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA7188D7DB6005EAC49 /* globe_h.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,6 @@
 		B53A7AA21887B293005EAC49 /* TWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTimer.h; sourceTree = "<group>"; };
 		B53A7AA31887B293005EAC49 /* TWTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTimer.m; sourceTree = "<group>"; };
 		B53A7AA5188D7D68005EAC49 /* globe_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe_l.png; sourceTree = "<group>"; };
-		B53A7AA7188D7DB6005EAC49 /* globe_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe_h.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				B53A7AA5188D7D68005EAC49 /* globe_l.png */,
-				B53A7AA7188D7DB6005EAC49 /* globe_h.png */,
 				B53A7A701886E062005EAC49 /* Hello-Info.plist */,
 				B53A7A711886E062005EAC49 /* InfoPlist.strings */,
 				B53A7A741886E062005EAC49 /* main.m */,
@@ -248,7 +245,6 @@
 				B53A7A7C1886E062005EAC49 /* Main_iPhone.storyboard in Resources */,
 				B53A7AA6188D7D68005EAC49 /* globe_l.png in Resources */,
 				B53A7A731886E062005EAC49 /* InfoPlist.strings in Resources */,
-				B53A7AA8188D7DB6005EAC49 /* globe_h.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
