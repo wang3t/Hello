@@ -31,8 +31,7 @@ static TWTimer *_shareTimer = nil;
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"%@-%@ starts at %@",
-                    NSStringFromClass([self class]), 
+    return [NSString stringWithFormat:@"%@ starts at %@",
                     self.name, self.initialTime];
 }
 

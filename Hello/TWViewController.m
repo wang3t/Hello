@@ -17,7 +17,7 @@
 @implementation TWViewController
 - (IBAction)sayHello:(id)sender
 {
-    self.hello.text = [NSString stringWithFormat:@"%@", [[[NSDate alloc]init]description]];
+    self.hello.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
 }
 
 -(void)tapRecognized:(UIGestureRecognizer*)recognizer
@@ -32,7 +32,7 @@
                      animations:^{
                          self.event.alpha = 0;
                          self.bgScn.alpha = 0;
-                         self.event.transform = CGAffineTransformMakeScale(0.1, 0.1);}
+                         self.event.transform = CGAffineTransformMakeScale(1.0, 0.1);}
                      completion:^(BOOL finished) {
                          self.event.text = [NSString stringWithFormat:@"tap2 at %f sec",[self.appTimer getDeltaTime]];
                          self.event.alpha = 1;
