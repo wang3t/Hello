@@ -22,8 +22,9 @@
 		B53A7A8D1886E062005EAC49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53A7A6C1886E062005EAC49 /* UIKit.framework */; };
 		B53A7A951886E062005EAC49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B53A7A931886E062005EAC49 /* InfoPlist.strings */; };
 		B53A7A971886E062005EAC49 /* HelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A961886E062005EAC49 /* HelloTests.m */; };
-		B53A7AA11886E615005EAC49 /* eightball.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA01886E615005EAC49 /* eightball.png */; };
 		B53A7AA41887B293005EAC49 /* TWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7AA31887B293005EAC49 /* TWTimer.m */; };
+		B53A7AA6188D7D68005EAC49 /* globe_l.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA5188D7D68005EAC49 /* globe_l.png */; };
+		B53A7AA8188D7DB6005EAC49 /* globe_h.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA7188D7DB6005EAC49 /* globe_h.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +58,10 @@
 		B53A7A921886E062005EAC49 /* HelloTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloTests-Info.plist"; sourceTree = "<group>"; };
 		B53A7A941886E062005EAC49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B53A7A961886E062005EAC49 /* HelloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloTests.m; sourceTree = "<group>"; };
-		B53A7AA01886E615005EAC49 /* eightball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eightball.png; sourceTree = "<group>"; };
 		B53A7AA21887B293005EAC49 /* TWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTimer.h; sourceTree = "<group>"; };
 		B53A7AA31887B293005EAC49 /* TWTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTimer.m; sourceTree = "<group>"; };
+		B53A7AA5188D7D68005EAC49 /* globe_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe_l.png; sourceTree = "<group>"; };
+		B53A7AA7188D7DB6005EAC49 /* globe_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe_h.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,8 @@
 		B53A7A6F1886E062005EAC49 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B53A7AA01886E615005EAC49 /* eightball.png */,
+				B53A7AA5188D7D68005EAC49 /* globe_l.png */,
+				B53A7AA7188D7DB6005EAC49 /* globe_h.png */,
 				B53A7A701886E062005EAC49 /* Hello-Info.plist */,
 				B53A7A711886E062005EAC49 /* InfoPlist.strings */,
 				B53A7A741886E062005EAC49 /* main.m */,
@@ -243,8 +246,9 @@
 				B53A7A7F1886E062005EAC49 /* Main_iPad.storyboard in Resources */,
 				B53A7A841886E062005EAC49 /* Images.xcassets in Resources */,
 				B53A7A7C1886E062005EAC49 /* Main_iPhone.storyboard in Resources */,
-				B53A7AA11886E615005EAC49 /* eightball.png in Resources */,
+				B53A7AA6188D7D68005EAC49 /* globe_l.png in Resources */,
 				B53A7A731886E062005EAC49 /* InfoPlist.strings in Resources */,
+				B53A7AA8188D7DB6005EAC49 /* globe_h.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
