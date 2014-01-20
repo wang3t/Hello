@@ -16,7 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.appTimer = [[TWTimer alloc]initWithName:@"HelloGit"];
+    //  self.appTimer = [[TWTimer alloc]initWithName:@"HelloGit"];
+    self.appTimer = [TWTimer sharedTimer:@"HelloGit"];
 
     NSLog(@"%@ with %@", NSStringFromClass([self class]), [self.appTimer debugDescription]);
 
@@ -36,8 +37,7 @@
 
     NSLog(@"%@ entering background %f seconds after %@", 
           NSStringFromClass([self class]), 
-          [self.appTimer getTimerDelta],
-          self.appTimer);
+          [self.appTimer getDeltaTime], self.appTimer);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -50,9 +50,8 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
     NSLog(@"%@ becoming active %f seconds after %@", 
-          NSStringFromClass([self class]), 
-          [self.appTimer getTimerDelta],
-          self.appTimer);
+          NSStringFromClass([self class]),
+          [self.appTimer getDeltaTime], self.appTimer);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

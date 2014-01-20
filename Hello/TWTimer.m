@@ -1,5 +1,6 @@
 #import "TWTimer.h"
 
+static TWTimer *_shareTimer = nil;
 @interface TWTimer ()
 @property (strong, nonatomic, readwrite) NSDate *initialTime;
 
@@ -8,6 +9,14 @@
 @implementation TWTimer
 @synthesize name = _name;
 @synthesize initialTime = _initialTime;
+
++ (id)sharedTimer:(NSString*)aName
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,
+                  ^{_shareTimer = [[self alloc]initWithName:aName];});
+    return _shareTimer;
+}
 
 - (id)initWithName:(NSString*)aName
 {
@@ -37,7 +46,7 @@
     return self;
 }
 
-- (NSTimeInterval)getTimerDelta 
+- (NSTimeInterval)getDeltaTime 
 {
     NSDate *now = [[NSDate alloc] init];
     NSTimeInterval elapsedTime = [now timeIntervalSinceDate:self.initialTime];
