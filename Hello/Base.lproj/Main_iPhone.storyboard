@@ -54,8 +54,79 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="e5t-fy-0FW">
+                    <connections>
+                        <segue destination="KPn-mI-ZqR" kind="modal" identifier="swipteRight" modalTransitionStyle="flipHorizontal" id="irQ-9G-o6v"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-9" y="-66"/>
+            <point key="canvasLocation" x="17" y="-48"/>
+        </scene>
+        <!--Input View Controller-->
+        <scene sceneID="noB-7c-0C0">
+            <objects>
+                <viewController id="KPn-mI-ZqR" customClass="TWInputViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GSI-6l-fo2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mi-VE-2SC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2oa-fv-XzC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLP-pF-rV0">
+                                <rect key="frame" x="34" y="76" width="252" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="PM3-9l-XnJ"/>
+                                    <constraint firstAttribute="width" constant="252" id="h5X-Dp-qyH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KPn-mI-ZqR" id="Oai-wP-MKZ"/>
+                                </connections>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKp-a4-1eu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="pel-Qs-vEV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WCq-4a-NgV">
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="KPn-mI-ZqR" id="OcR-db-KvU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jDU-gY-d6h">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="KPn-mI-ZqR" id="iRF-UY-NPX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dKp-a4-1eu" firstAttribute="centerX" secondItem="WLP-pF-rV0" secondAttribute="centerX" id="5RX-e7-y5I"/>
+                            <constraint firstItem="dKp-a4-1eu" firstAttribute="trailing" secondItem="2oa-fv-XzC" secondAttribute="trailing" id="6oX-DB-YEO"/>
+                            <constraint firstItem="WLP-pF-rV0" firstAttribute="top" secondItem="2oa-fv-XzC" secondAttribute="top" constant="76" id="dcf-Qx-FP1"/>
+                            <constraint firstItem="dKp-a4-1eu" firstAttribute="leading" secondItem="2oa-fv-XzC" secondAttribute="leading" id="kEL-vx-UFn"/>
+                            <constraint firstItem="dKp-a4-1eu" firstAttribute="top" secondItem="2oa-fv-XzC" secondAttribute="top" id="vq4-wb-867"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="e5t-fy-0FW" appends="YES" id="eX8-8v-AMH"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ib6-3M-Pha"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="WCq-4a-NgV" id="wBc-AW-kqF"/>
+                        <outlet property="inputField" destination="WLP-pF-rV0" id="wj2-k5-Vad"/>
+                        <outlet property="saveButton" destination="jDU-gY-d6h" id="lAQ-Le-gEX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7B-zS-OYm" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="-54"/>
         </scene>
     </scenes>
     <resources>

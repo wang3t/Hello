@@ -24,6 +24,7 @@
 		B53A7A971886E062005EAC49 /* HelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A961886E062005EAC49 /* HelloTests.m */; };
 		B53A7AA41887B293005EAC49 /* TWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7AA31887B293005EAC49 /* TWTimer.m */; };
 		B53A7AA6188D7D68005EAC49 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA5188D7D68005EAC49 /* globe.png */; };
+		B53A7AAB188D8896005EAC49 /* TWInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7AAA188D8896005EAC49 /* TWInputVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		B53A7AA21887B293005EAC49 /* TWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTimer.h; sourceTree = "<group>"; };
 		B53A7AA31887B293005EAC49 /* TWTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTimer.m; sourceTree = "<group>"; };
 		B53A7AA5188D7D68005EAC49 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		B53A7AA9188D8896005EAC49 /* TWInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWInputVC.h; sourceTree = "<group>"; };
+		B53A7AAA188D8896005EAC49 /* TWInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWInputVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				B53A7A7D1886E062005EAC49 /* Main_iPad.storyboard */,
 				B53A7A801886E062005EAC49 /* TWViewController.h */,
 				B53A7A811886E062005EAC49 /* TWViewController.m */,
+				B53A7AA9188D8896005EAC49 /* TWInputVC.h */,
+				B53A7AAA188D8896005EAC49 /* TWInputVC.m */,
 				B53A7AA21887B293005EAC49 /* TWTimer.h */,
 				B53A7AA31887B293005EAC49 /* TWTimer.m */,
 				B53A7A831886E062005EAC49 /* Images.xcassets */,
@@ -263,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53A7AAB188D8896005EAC49 /* TWInputVC.m in Sources */,
 				B53A7A751886E062005EAC49 /* main.m in Sources */,
 				B53A7A791886E062005EAC49 /* TWAppDelegate.m in Sources */,
 				B53A7A821886E062005EAC49 /* TWViewController.m in Sources */,

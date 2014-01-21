@@ -5,8 +5,9 @@
 
 #import "TWViewController.h"
 #import "TWTimer.h"
+#import "TWInputVC.h"
 
-@interface TWViewController ()
+@interface TWViewController () <TWInputDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *hello;
 @property (weak, nonatomic) IBOutlet UIImageView *bgScn;
 @property (weak, nonatomic) IBOutlet UILabel *event;
@@ -15,6 +16,27 @@
 @end
 
 @implementation TWViewController
+@synthesize hello = _hello;
+@synthesize bgScn = _bgScn;
+@synthesize event = _event;
+@synthesize appTimer = _appTimer;
+
+// TWInputDelegate
+- (void)inputView:(TWInputVC*)inputView
+     didEnterText:(NSString *)text
+{
+    NSLog(@"User Enter %@", text);
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// swipe segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    TWInputVC *inputVC = [segue destinationViewController];
+    inputVC.delegate = self;
+    NSLog(@"Segue %@ from %@ to %@", segue, [sender class], [inputVC description]);
+}
+
 - (IBAction)sayHello:(id)sender
 {
     self.hello.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
@@ -69,20 +91,21 @@
     self.appTimer = [TWTimer sharedTimer:nil];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    // Rotate + pinch
     UIRotationGestureRecognizer *rotate = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotateRecognized:)];
     [self.view addGestureRecognizer:rotate];
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchRecognized:)];
     [self.view addGestureRecognizer:pinch];
     
-    // Gesture
+    // Swipe
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]
                                          initWithTarget:self
                                          action:@selector(swipeGestureRecognized:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
     [self.view addGestureRecognizer:swipeUp];
     
-    //TSW singleTap + doubleTap
+    //singleTap + doubleTap
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]
                                          initWithTarget:self
                                          action:@selector(tap2Recognized:)];
