@@ -26,7 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEC-LV-Y7r">
                                 <rect key="frame" x="95" y="430" width="130" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button_Click">
+                                <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,6 +36,7 @@
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globe.png" translatesAutoresizingMaskIntoConstraints="NO" id="RkF-m8-WfC">
                                 <rect key="frame" x="5" y="113" width="310" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-3g-aNV">
                                 <rect key="frame" x="5" y="85" width="310" height="28"/>
@@ -46,6 +47,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kWA-5J-1Ua" appends="YES" id="KNI-lp-cYK"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="bgScn" destination="RkF-m8-WfC" id="wwt-te-oAj"/>
@@ -54,50 +59,46 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="e5t-fy-0FW">
+                <swipeGestureRecognizer direction="right" id="kWA-5J-1Ua">
                     <connections>
-                        <segue destination="KPn-mI-ZqR" kind="modal" identifier="swipteRight" modalTransitionStyle="flipHorizontal" id="irQ-9G-o6v"/>
+                        <segue destination="ZG0-V8-kfV" kind="modal" identifier="enterValue" modalTransitionStyle="flipHorizontal" id="Mh2-2G-Msd"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="17" y="-48"/>
         </scene>
-        <!--Input View Controller-->
-        <scene sceneID="noB-7c-0C0">
+        <!--InputVC - defaultAnswer-->
+        <scene sceneID="ucu-J3-PRW">
             <objects>
-                <viewController id="KPn-mI-ZqR" customClass="TWInputViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="defaultAnswerVC" title="defaultAnswer" id="ZG0-V8-kfV" customClass="TWInputVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GSI-6l-fo2"/>
-                        <viewControllerLayoutGuide type="bottom" id="8mi-VE-2SC"/>
+                        <viewControllerLayoutGuide type="top" id="1me-ug-Mgq"/>
+                        <viewControllerLayoutGuide type="bottom" id="KcH-NC-lm3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2oa-fv-XzC">
+                    <view key="view" contentMode="scaleToFill" id="aYt-SB-udm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLP-pF-rV0">
-                                <rect key="frame" x="34" y="76" width="252" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="PM3-9l-XnJ"/>
-                                    <constraint firstAttribute="width" constant="252" id="h5X-Dp-qyH"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-i8-5lZ">
+                                <rect key="frame" x="34" y="107" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="KPn-mI-ZqR" id="Oai-wP-MKZ"/>
+                                    <outlet property="delegate" destination="ZG0-V8-kfV" id="DMp-vp-Rkc"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKp-a4-1eu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="el9-p6-J5c">
+                                <rect key="frame" x="0.0" y="34" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="pel-Qs-vEV">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WCq-4a-NgV">
+                                    <navigationItem title="Title" id="BVV-N3-MaH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mOR-gb-INr">
                                             <connections>
-                                                <action selector="cancelButtonTapped:" destination="KPn-mI-ZqR" id="OcR-db-KvU"/>
+                                                <action selector="cancelButtonTapped:" destination="ZG0-V8-kfV" id="nxl-IZ-mdT"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jDU-gY-d6h">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="41U-5p-4Vc">
                                             <connections>
-                                                <action selector="saveButtonTapped:" destination="KPn-mI-ZqR" id="iRF-UY-NPX"/>
+                                                <action selector="saveButtonTapped:" destination="ZG0-V8-kfV" id="NVI-oM-DRO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -105,28 +106,17 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="dKp-a4-1eu" firstAttribute="centerX" secondItem="WLP-pF-rV0" secondAttribute="centerX" id="5RX-e7-y5I"/>
-                            <constraint firstItem="dKp-a4-1eu" firstAttribute="trailing" secondItem="2oa-fv-XzC" secondAttribute="trailing" id="6oX-DB-YEO"/>
-                            <constraint firstItem="WLP-pF-rV0" firstAttribute="top" secondItem="2oa-fv-XzC" secondAttribute="top" constant="76" id="dcf-Qx-FP1"/>
-                            <constraint firstItem="dKp-a4-1eu" firstAttribute="leading" secondItem="2oa-fv-XzC" secondAttribute="leading" id="kEL-vx-UFn"/>
-                            <constraint firstItem="dKp-a4-1eu" firstAttribute="top" secondItem="2oa-fv-XzC" secondAttribute="top" id="vq4-wb-867"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="e5t-fy-0FW" appends="YES" id="eX8-8v-AMH"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="Ib6-3M-Pha"/>
+                    <navigationItem key="navigationItem" id="CWm-cB-R5E"/>
                     <connections>
-                        <outlet property="cancelButton" destination="WCq-4a-NgV" id="wBc-AW-kqF"/>
-                        <outlet property="inputField" destination="WLP-pF-rV0" id="wj2-k5-Vad"/>
-                        <outlet property="saveButton" destination="jDU-gY-d6h" id="lAQ-Le-gEX"/>
+                        <outlet property="cancelButton" destination="mOR-gb-INr" id="JRo-lM-aFC"/>
+                        <outlet property="inputField" destination="ZCN-i8-5lZ" id="E36-zv-nng"/>
+                        <outlet property="saveButton" destination="41U-5p-4Vc" id="zw8-uM-iph"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B7B-zS-OYm" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5A-pE-nbe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="-54"/>
+            <point key="canvasLocation" x="431" y="-48"/>
         </scene>
     </scenes>
     <resources>

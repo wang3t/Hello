@@ -148,8 +148,10 @@ replacementString:(NSString *)string
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    // make myself a delegate to textField
     self.inputField.delegate = self;
-    self.delegate = self;
+    // self.delegate = self;
     
     self.saveButton.enabled = NO;
     self.cancelButton.enabled = NO;

@@ -22,11 +22,19 @@
 @synthesize appTimer = _appTimer;
 
 // TWInputDelegate
+-(void)inputViewDidCancel:(TWInputVC *)inputView
+{
+    NSLog(@"Presented VC %@",  [[self presentedViewController] class]);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)inputView:(TWInputVC*)inputView
      didEnterText:(NSString *)text
 {
+    self.event.text = [NSString stringWithFormat:@"enter %@ at %f sec",text,[self.appTimer getDeltaTime]];
     NSLog(@"User Enter %@", text);
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self inputViewDidCancel:inputView];
 }
 
 // swipe segue
@@ -46,7 +54,7 @@
 -(void)tapRecognized:(UIGestureRecognizer*)recognizer
 {
     self.event.text = [NSString stringWithFormat:@"tap at %f sec",[self.appTimer getDeltaTime]];
-    NSLog(@"tapRecognized => %@", [recognizer description]);
+    NSLog(@"=> tapRecognized ");
 }
 
 -(void)tap2Recognized:(UIGestureRecognizer*)recognizer
@@ -61,26 +69,26 @@
                          self.event.alpha = 1;
                          self.bgScn.alpha = 1;
                          self.event.transform = CGAffineTransformIdentity;}];
-    NSLog(@"tap2Recognized => %@", [recognizer description]);
+    NSLog(@"=> tap2Recognized");
 }
 
 -(void)swipeGestureRecognized:(UIGestureRecognizer*)recognizer
 {
     self.event.text = [NSString stringWithFormat:@"swipe at %f sec",[self.appTimer getDeltaTime]];
-    NSLog(@"swipeGestureRecognized => %@", [recognizer description]);
+    NSLog(@"=> swipeGestureRecognized");
 }
 
 -(void)pinchRecognized:(UIGestureRecognizer*)recognizer
 {
     self.event.text = [NSString stringWithFormat:@"ping at %f sec",[self.appTimer getDeltaTime]];
-    NSLog(@"pinchRecognized => %@", [recognizer description]);
+    NSLog(@"=> pinchRecognized");
 }
 
 -(void)rotateRecognized:(UIGestureRecognizer*)recognizer
 {
     self.event.text = [NSString stringWithFormat:@"rotate at %f sec",[self.appTimer getDeltaTime]];
 
-    NSLog(@"rotateRecognized => %@", [recognizer description]);
+    NSLog(@"=> rotateRecognized");
 }
 
 //
@@ -97,7 +105,7 @@
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchRecognized:)];
     [self.view addGestureRecognizer:pinch];
-    
+
     // Swipe
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]
                                          initWithTarget:self
