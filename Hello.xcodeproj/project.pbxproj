@@ -26,6 +26,8 @@
 		B53A7AA6188D7D68005EAC49 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = B53A7AA5188D7D68005EAC49 /* globe.png */; };
 		B53A7AAB188D8896005EAC49 /* TWInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7AAA188D8896005EAC49 /* TWInputVC.m */; };
 		B59A0940188FADA60056D661 /* roledex.png in Resources */ = {isa = PBXBuildFile; fileRef = B59A093F188FADA60056D661 /* roledex.png */; };
+		B59A0943189019840056D661 /* TWTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B59A0942189019840056D661 /* TWTableVC.m */; };
+		B59A094618901C940056D661 /* TWDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59A094518901C940056D661 /* TWDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		B53A7AA9188D8896005EAC49 /* TWInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWInputVC.h; sourceTree = "<group>"; };
 		B53A7AAA188D8896005EAC49 /* TWInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWInputVC.m; sourceTree = "<group>"; };
 		B59A093F188FADA60056D661 /* roledex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roledex.png; sourceTree = "<group>"; };
+		B59A0941189019840056D661 /* TWTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTableVC.h; sourceTree = "<group>"; };
+		B59A0942189019840056D661 /* TWTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTableVC.m; sourceTree = "<group>"; };
+		B59A094418901C940056D661 /* TWDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWDataModel.h; sourceTree = "<group>"; };
+		B59A094518901C940056D661 /* TWDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,12 @@
 				B53A7A7D1886E062005EAC49 /* Main_iPad.storyboard */,
 				B53A7A801886E062005EAC49 /* TWViewController.h */,
 				B53A7A811886E062005EAC49 /* TWViewController.m */,
+				B59A0941189019840056D661 /* TWTableVC.h */,
+				B59A0942189019840056D661 /* TWTableVC.m */,
 				B53A7AA9188D8896005EAC49 /* TWInputVC.h */,
 				B53A7AAA188D8896005EAC49 /* TWInputVC.m */,
+				B59A094418901C940056D661 /* TWDataModel.h */,
+				B59A094518901C940056D661 /* TWDataModel.m */,
 				B53A7AA21887B293005EAC49 /* TWTimer.h */,
 				B53A7AA31887B293005EAC49 /* TWTimer.m */,
 				B53A7A831886E062005EAC49 /* Images.xcassets */,
@@ -275,7 +285,9 @@
 				B53A7AAB188D8896005EAC49 /* TWInputVC.m in Sources */,
 				B53A7A751886E062005EAC49 /* main.m in Sources */,
 				B53A7A791886E062005EAC49 /* TWAppDelegate.m in Sources */,
+				B59A094618901C940056D661 /* TWDataModel.m in Sources */,
 				B53A7A821886E062005EAC49 /* TWViewController.m in Sources */,
+				B59A0943189019840056D661 /* TWTableVC.m in Sources */,
 				B53A7AA41887B293005EAC49 /* TWTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

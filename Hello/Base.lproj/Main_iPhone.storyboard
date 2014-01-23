@@ -26,7 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEC-LV-Y7r">
                                 <rect key="frame" x="95" y="430" width="130" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Try Me !">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -50,6 +50,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="kWA-5J-1Ua" appends="YES" id="KNI-lp-cYK"/>
+                            <outletCollection property="gestureRecognizers" destination="DJa-hY-tPC" appends="YES" id="840-Cm-VZP"/>
                         </connections>
                     </view>
                     <connections>
@@ -62,6 +63,11 @@
                 <swipeGestureRecognizer direction="right" id="kWA-5J-1Ua">
                     <connections>
                         <segue destination="ZG0-V8-kfV" kind="modal" identifier="enterValue" modalTransitionStyle="flipHorizontal" id="Mh2-2G-Msd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="DJa-hY-tPC">
+                    <connections>
+                        <segue destination="RtW-Jc-kWQ" kind="modal" identifier="showLog" modalTransitionStyle="crossDissolve" id="9rX-7X-3jz"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -116,7 +122,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5A-pE-nbe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-48"/>
+            <point key="canvasLocation" x="513" y="358"/>
+        </scene>
+        <!--TableVC - Title-->
+        <scene sceneID="pvt-Hi-RcD">
+            <objects>
+                <tableViewController id="RtW-Jc-kWQ" customClass="TWTableVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GKi-xF-45A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TWCell" id="flj-mE-Yo1">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="flj-mE-Yo1" id="5B8-ad-TiJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RtW-Jc-kWQ" id="waY-oF-e4k"/>
+                            <outlet property="delegate" destination="RtW-Jc-kWQ" id="PbX-8K-2Nr"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="GnA-7f-lfT">
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="ozf-dk-0tt"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baZ-b3-Al5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="-297"/>
         </scene>
     </scenes>
     <resources>

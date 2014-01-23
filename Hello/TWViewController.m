@@ -6,13 +6,15 @@
 #import "TWViewController.h"
 #import "TWTimer.h"
 #import "TWInputVC.h"
+#import "TWTableVC.h"
+#import "TWDataModel.h"
 
 @interface TWViewController () <TWInputDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *hello;
 @property (weak, nonatomic) IBOutlet UIImageView *bgScn;
 @property (weak, nonatomic) IBOutlet UILabel *event;
 @property (strong, nonatomic) TWTimer* appTimer;
-
+@property (strong, nonatomic) TWDataModel* appModel;
 @end
 
 @implementation TWViewController
@@ -20,6 +22,7 @@
 @synthesize bgScn = _bgScn;
 @synthesize event = _event;
 @synthesize appTimer = _appTimer;
+@synthesize appModel = _appModel;
 
 // TWInputDelegate
 -(void)inputViewDidCancel:(TWInputVC *)inputView
@@ -32,33 +35,51 @@
 - (void)inputView:(TWInputVC*)inputView
      didEnterText:(NSString *)text
 {
-    self.event.text = [NSString stringWithFormat:@"enter %@ at %f sec",text,[self.appTimer getDeltaTime]];
     NSLog(@"User Enter %@", text);
+    self.event.text = [NSString stringWithFormat:@"enter %@ at %f sec",text,[self.appTimer getDeltaTime]];
+    [self.appModel addLog:self.event.text];
+
     [self inputViewDidCancel:inputView];
 }
 
 // swipe segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TWInputVC *inputVC = [segue destinationViewController];
-    inputVC.delegate = self;
-    NSLog(@"Segue %@ from %@ to %@", segue, [sender class], [inputVC description]);
+    if ( [segue.identifier isEqualToString:@"showLog"] )
+    {
+        TWTableVC *tableVC = [segue destinationViewController];
+        [tableVC setSource:(id)self.appModel];
+        NSLog(@"showLog-Segue %@ from %@ to %@", segue, [sender class], [tableVC description]);
+    }
+    else if ( [segue.identifier isEqualToString:@"enterValue"] )
+    {
+        TWInputVC *inputVC = [segue destinationViewController];
+        inputVC.delegate = self;
+        NSLog(@"enterValue-Segue %@ from %@ to %@", segue, [sender class], [inputVC description]);
+    }
+    else
+    {
+        NSLog(@"Warning: Segue %@ from %@ fails !", segue, [sender class]);
+    }
 }
 
 - (IBAction)sayHello:(id)sender
 {
-    self.hello.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
+    NSLog(@"=> Button Click");
     self.event.text = [NSString stringWithFormat:@"Button at %f sec",[self.appTimer getDeltaTime]];
+    [self.appModel addLog:self.event.text];
 }
 
 -(void)tapRecognized:(UIGestureRecognizer*)recognizer
 {
-    self.event.text = [NSString stringWithFormat:@"tap at %f sec",[self.appTimer getDeltaTime]];
     NSLog(@"=> tapRecognized ");
+    self.event.text = [NSString stringWithFormat:@"tap at %f sec",[self.appTimer getDeltaTime]];
+    [self.appModel addLog:self.event.text];
 }
 
 -(void)tap2Recognized:(UIGestureRecognizer*)recognizer
 {
+    NSLog(@"=> tap2Recognized");
     [UIView animateWithDuration:1.0
                      animations:^{
                          self.event.alpha = 0;
@@ -69,26 +90,30 @@
                          self.event.alpha = 1;
                          self.bgScn.alpha = 1;
                          self.event.transform = CGAffineTransformIdentity;}];
-    NSLog(@"=> tap2Recognized");
+    
+    [self.appModel addLog:self.event.text];
 }
 
 -(void)swipeGestureRecognized:(UIGestureRecognizer*)recognizer
 {
-    self.event.text = [NSString stringWithFormat:@"swipe at %f sec",[self.appTimer getDeltaTime]];
     NSLog(@"=> swipeGestureRecognized");
+    self.event.text = [NSString stringWithFormat:@"swipe at %f sec",[self.appTimer getDeltaTime]];
+    [self.appModel addLog:self.event.text];
 }
 
 -(void)pinchRecognized:(UIGestureRecognizer*)recognizer
 {
-    self.event.text = [NSString stringWithFormat:@"ping at %f sec",[self.appTimer getDeltaTime]];
     NSLog(@"=> pinchRecognized");
+    self.event.text = [NSString stringWithFormat:@"pinch at %f sec",[self.appTimer getDeltaTime]];
+    [self.appModel addLog:self.event.text];
 }
 
 -(void)rotateRecognized:(UIGestureRecognizer*)recognizer
 {
+    NSLog(@"=> rotateRecognized");
     self.event.text = [NSString stringWithFormat:@"rotate at %f sec",[self.appTimer getDeltaTime]];
 
-    NSLog(@"=> rotateRecognized");
+    [self.appModel addLog:self.event.text];
 }
 
 //
@@ -97,6 +122,13 @@
     [super viewDidLoad];
     
     self.appTimer = [TWTimer sharedTimer:nil];
+    // self.appModel = [[TWDataModel alloc]init];
+    self.appModel = [TWDataModel sharedModel];
+
+    self.hello.text = [NSString stringWithFormat:@"%@", [self class]];
+    self.event.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
+    [self.appModel addLog:self.event.text];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 
     // Rotate + pinch

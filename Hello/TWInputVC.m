@@ -1,10 +1,6 @@
 //
-//  TSWViewController.m
-//  TextInput
-//
-//  Created by Shiehlie on 7/24/12.
-//  Copyright (c) 2012 com.WiSE. All rights reserved.
-//
+//  TWInputVC.m
+//  Get user Input
 
 #import "TWInputVC.h"
 
