@@ -147,13 +147,7 @@
                             <outlet property="delegate" destination="RtW-Jc-kWQ" id="PbX-8K-2Nr"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Back" id="f4r-sN-DVW">
-                            <connections>
-                                <action selector="cancelShowLog:" destination="RtW-Jc-kWQ" id="r73-HW-vxz"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="ev1-OG-k5c"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
