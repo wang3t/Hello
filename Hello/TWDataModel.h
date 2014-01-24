@@ -18,6 +18,7 @@
 - (NSInteger)numberOfLog;
 - (NSInteger)addLog:(NSString *)text;
 - (NSString *)logAtIndex:(NSInteger)index;
+- (void)removeLogAtIndex:(NSInteger)index;
 + (id)sharedModel;
 
 @end

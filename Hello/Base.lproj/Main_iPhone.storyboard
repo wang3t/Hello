@@ -62,12 +62,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="kWA-5J-1Ua">
                     <connections>
-                        <segue destination="ZG0-V8-kfV" kind="modal" identifier="enterValue" modalTransitionStyle="flipHorizontal" id="Mh2-2G-Msd"/>
+                        <segue destination="ZG0-V8-kfV" kind="modal" identifier="showInputVC" modalTransitionStyle="flipHorizontal" id="Mh2-2G-Msd"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="DJa-hY-tPC">
                     <connections>
-                        <segue destination="RtW-Jc-kWQ" kind="modal" identifier="showLog" modalTransitionStyle="crossDissolve" id="9rX-7X-3jz"/>
+                        <segue destination="aRe-oU-pll" kind="modal" identifier="NaviShowTableVC" modalTransitionStyle="crossDissolve" id="9rX-7X-3jz"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="513" y="358"/>
         </scene>
-        <!--TableVC - Title-->
+        <!--TableVC-->
         <scene sceneID="pvt-Hi-RcD">
             <objects>
                 <tableViewController id="RtW-Jc-kWQ" customClass="TWTableVC" sceneMemberID="viewController">
@@ -147,15 +147,37 @@
                             <outlet property="delegate" destination="RtW-Jc-kWQ" id="PbX-8K-2Nr"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="GnA-7f-lfT">
-                        <barButtonItem key="rightBarButtonItem" title="Back" id="ozf-dk-0tt"/>
-                    </navigationItem>
+                    <toolbarItems>
+                        <barButtonItem title="Back" id="f4r-sN-DVW">
+                            <connections>
+                                <action selector="cancelShowLog:" destination="RtW-Jc-kWQ" id="r73-HW-vxz"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="ev1-OG-k5c"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baZ-b3-Al5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-297"/>
+            <point key="canvasLocation" x="975" y="-325"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4SA-PX-TOb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aRe-oU-pll" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wWe-Ys-No9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RtW-Jc-kWQ" kind="relationship" relationship="rootViewController" id="0xh-8Y-ZK9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABC-sD-dxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="-325"/>
         </scene>
     </scenes>
     <resources>

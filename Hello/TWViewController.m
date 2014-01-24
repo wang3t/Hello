@@ -45,21 +45,21 @@
 // swipe segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ( [segue.identifier isEqualToString:@"showLog"] )
+    if ( [segue.identifier isEqualToString:@"showTableVC"] )
     {
         TWTableVC *tableVC = [segue destinationViewController];
+        NSLog(@"showTableVC-Segue %@ from %@ to %@", segue, [sender class], [tableVC description]);
         [tableVC setSource:(id)self.appModel];
-        NSLog(@"showLog-Segue %@ from %@ to %@", segue, [sender class], [tableVC description]);
     }
-    else if ( [segue.identifier isEqualToString:@"enterValue"] )
+    else if ( [segue.identifier isEqualToString:@"showInputVC"] )
     {
         TWInputVC *inputVC = [segue destinationViewController];
         inputVC.delegate = self;
-        NSLog(@"enterValue-Segue %@ from %@ to %@", segue, [sender class], [inputVC description]);
+        NSLog(@"showInputVC-Segue %@ from %@ to %@", segue, [sender class], [inputVC description]);
     }
     else
     {
-        NSLog(@"Warning: Segue %@ from %@ fails !", segue, [sender class]);
+        NSLog(@"Generic Segue %@ from %@ ", segue, [sender class]);
     }
 }
 

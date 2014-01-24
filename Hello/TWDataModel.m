@@ -123,6 +123,16 @@ NSString *const TWsysData = @"TWsysData";
     return [self.sysData objectAtIndex:index];
 }
 
+- (void)removeLogAtIndex:(NSInteger)index
+{
+    if ( index < [self.sysData count] )
+    {
+        NSLog(@"Deleting %@ from Log[%d]", [self logAtIndex:index], [self numberOfLog]);
+        [self.sysData removeObjectAtIndex:index];
+        [self save];
+    }
+}
+
 #pragma mark - init for Notification
 
 -(id)init
