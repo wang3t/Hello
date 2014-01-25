@@ -32,13 +32,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0)
     {
-        NSLog(@"Save Action");
+        NSLog(@"Save on Action-Sheet");
         [self reportNewText];
         [self resetStates];
     }
      else if (buttonIndex == 1)
      {
-        NSLog(@"Cancel action");
+        NSLog(@"Cancel on Action-Sheet");
      }
 }
 
@@ -57,10 +57,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ( buttonIndex == 0)
-        NSLog(@"No to Cancel");
+        NSLog(@"No to Cancel on Alert-View");
     else if ( buttonIndex == 1)
     {
-        NSLog(@"Yes to Cnacel");
+        NSLog(@"Yes to Cnacel on Alert-View");
         if ([self.delegate respondsToSelector:@selector(inputViewDidCancel:)])
         {
             [self.delegate inputViewDidCancel:self];
@@ -74,7 +74,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     [self.inputField resignFirstResponder];
     self.inputField.text = @"";
     self.saveButton.enabled = NO;
-    self.cancelButton.enabled = NO;
+    self.cancelButton.enabled = YES;    // NO;
 }
 
 -(void)inputView:(TWInputVC *)inputView
@@ -92,14 +92,24 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 - (IBAction)saveButtonTapped:(id)sender
 {
     NSLog(@"User Save = %@", self.inputField.text);
-    [self reportNewText];
-    [self resetStates];
+    [self showActionSheet];
+
+    // [self reportNewText];
+    // [self resetStates];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender
 {
-    NSLog(@"User Cancel = %@", self.inputField.text);
-    [self showAlert];
+    if ( self.inputField.text.length )
+    {
+        NSLog(@"User Cancel = %@", self.inputField.text);
+        [self showAlert];
+    }
+    else
+    {
+        NSLog(@"User Cancel Input");
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -125,7 +135,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     if ( [name compare:@"save"] == NSOrderedSame )
         self.saveButton.enabled = hasText;
     else if ( [name compare:@"cancel"] == NSOrderedSame)
-        self.cancelButton.enabled = hasText;
+        self.cancelButton.enabled = YES;    // hasText;
  }
 
 -(BOOL)textField:(UITextField *)textField
@@ -150,7 +160,7 @@ replacementString:(NSString *)string
     // self.delegate = self;
     
     self.saveButton.enabled = NO;
-    self.cancelButton.enabled = NO;
+    self.cancelButton.enabled = YES;
 }
 
 - (void)didReceiveMemoryWarning
