@@ -15,7 +15,7 @@
 		B53A7A791886E062005EAC49 /* TWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A781886E062005EAC49 /* TWAppDelegate.m */; };
 		B53A7A7C1886E062005EAC49 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53A7A7A1886E062005EAC49 /* Main_iPhone.storyboard */; };
 		B53A7A7F1886E062005EAC49 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53A7A7D1886E062005EAC49 /* Main_iPad.storyboard */; };
-		B53A7A821886E062005EAC49 /* TWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A811886E062005EAC49 /* TWViewController.m */; };
+		B53A7A821886E062005EAC49 /* TWHelloVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A7A811886E062005EAC49 /* TWHelloVC.m */; };
 		B53A7A841886E062005EAC49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53A7A831886E062005EAC49 /* Images.xcassets */; };
 		B53A7A8B1886E062005EAC49 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53A7A8A1886E062005EAC49 /* XCTest.framework */; };
 		B53A7A8C1886E062005EAC49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53A7A681886E062005EAC49 /* Foundation.framework */; };
@@ -53,8 +53,8 @@
 		B53A7A781886E062005EAC49 /* TWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAppDelegate.m; sourceTree = "<group>"; };
 		B53A7A7B1886E062005EAC49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B53A7A7E1886E062005EAC49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B53A7A801886E062005EAC49 /* TWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWViewController.h; sourceTree = "<group>"; };
-		B53A7A811886E062005EAC49 /* TWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWViewController.m; sourceTree = "<group>"; };
+		B53A7A801886E062005EAC49 /* TWHelloVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWHelloVC.h; sourceTree = "<group>"; };
+		B53A7A811886E062005EAC49 /* TWHelloVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWHelloVC.m; sourceTree = "<group>"; };
 		B53A7A831886E062005EAC49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B53A7A891886E062005EAC49 /* HelloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53A7A8A1886E062005EAC49 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -134,8 +134,8 @@
 				B53A7A781886E062005EAC49 /* TWAppDelegate.m */,
 				B53A7A7A1886E062005EAC49 /* Main_iPhone.storyboard */,
 				B53A7A7D1886E062005EAC49 /* Main_iPad.storyboard */,
-				B53A7A801886E062005EAC49 /* TWViewController.h */,
-				B53A7A811886E062005EAC49 /* TWViewController.m */,
+				B53A7A801886E062005EAC49 /* TWHelloVC.h */,
+				B53A7A811886E062005EAC49 /* TWHelloVC.m */,
 				B59A0941189019840056D661 /* TWTableVC.h */,
 				B59A0942189019840056D661 /* TWTableVC.m */,
 				B53A7AA9188D8896005EAC49 /* TWInputVC.h */,
@@ -286,7 +286,7 @@
 				B53A7A751886E062005EAC49 /* main.m in Sources */,
 				B53A7A791886E062005EAC49 /* TWAppDelegate.m in Sources */,
 				B59A094618901C940056D661 /* TWDataModel.m in Sources */,
-				B53A7A821886E062005EAC49 /* TWViewController.m in Sources */,
+				B53A7A821886E062005EAC49 /* TWHelloVC.m in Sources */,
 				B59A0943189019840056D661 /* TWTableVC.m in Sources */,
 				B53A7AA41887B293005EAC49 /* TWTimer.m in Sources */,
 			);

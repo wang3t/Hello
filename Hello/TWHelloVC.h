@@ -5,6 +5,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TWViewController : UIViewController
+@interface TWHelloVC : UIViewController
 
 @end

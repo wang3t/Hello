@@ -3,13 +3,13 @@
 //  Hello
 //
 
-#import "TWViewController.h"
+#import "TWHelloVC.h"
 #import "TWTimer.h"
 #import "TWInputVC.h"
 #import "TWTableVC.h"
 #import "TWDataModel.h"
 
-@interface TWViewController () <TWInputDelegate>
+@interface TWHelloVC () <TWInputDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *hello;
 @property (weak, nonatomic) IBOutlet UIImageView *bgScn;
 @property (weak, nonatomic) IBOutlet UILabel *event;
@@ -17,7 +17,7 @@
 @property (strong, nonatomic) TWDataModel* appModel;
 @end
 
-@implementation TWViewController
+@implementation TWHelloVC
 @synthesize hello = _hello;
 @synthesize bgScn = _bgScn;
 @synthesize event = _event;

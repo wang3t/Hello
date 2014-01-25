@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HelloVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="TWViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="TWHelloVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WpQ-ST-qBa"/>
                         <viewControllerLayoutGuide type="bottom" id="aa4-iS-hZ2"/>
@@ -113,7 +113,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CWm-cB-R5E"/>
                     <connections>
                         <outlet property="cancelButton" destination="mOR-gb-INr" id="JRo-lM-aFC"/>
                         <outlet property="inputField" destination="ZCN-i8-5lZ" id="E36-zv-nng"/>
