@@ -125,7 +125,7 @@
     // self.appModel = [[TWDataModel alloc]init];
     self.appModel = [TWDataModel sharedModel];
 
-    self.hello.text = [NSString stringWithFormat:@"%@", [self class]];
+    self.hello.text = [NSString stringWithFormat:@"%@, by TW", self.appTimer.name];
     self.event.text = [NSString stringWithFormat:@"%@", [self.appTimer description]];
     [self.appModel addLog:self.event.text];
     

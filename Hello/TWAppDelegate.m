@@ -17,7 +17,7 @@
 {
     // Override point for customization after application launch.
     //  self.appTimer = [[TWTimer alloc]initWithName:@"HelloGit"];
-    self.appTimer = [TWTimer sharedTimer:@"HelloGit"];
+    self.appTimer = [TWTimer sharedTimer:@"Hello"];
 
     NSLog(@"%@ with %@", NSStringFromClass([self class]), [self.appTimer debugDescription]);
 
